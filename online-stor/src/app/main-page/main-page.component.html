@@ -56,7 +56,10 @@
     </div>
   </div>
   <div class="selected-products">
-    <div class="product" *ngFor="let product of products">
+    <div
+      class="product"
+      *ngFor="let product of products | productFilter: idSelectedCategory"
+    >
       <!-- <span>{{ product.idCategory }}</span>
         <span>{{ idSelectedCategory }}</span> -->
       <div class="product__wrapper">
