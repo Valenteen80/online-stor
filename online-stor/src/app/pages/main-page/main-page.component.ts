@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../interfases/category';
-import { Product } from '../interfases/product';
-import { CATIGORIES } from '../mocks/mock-categories';
-import { PRODUCTS } from '../mocks/mock-products';
+import { Category } from '../../interfases/category';
+import { Product } from '../../interfases/product';
+import { CATIGORIES } from '../../mocks/mock-categories';
+import { PRODUCTS } from '../../mocks/mock-products';
 
 @Component({
   selector: 'app-main-page',
