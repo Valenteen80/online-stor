@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ProductFilterPipe } from './shared/pipes/product-filter-pipe/product-filter.pipe';
+import { SortPipe } from './shared/pipes/sort-pipe/sort.pipe';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, ProductFilterPipe],
+  declarations: [AppComponent, MainPageComponent, ProductFilterPipe, SortPipe],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

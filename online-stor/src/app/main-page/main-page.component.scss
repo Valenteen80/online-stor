@@ -7,7 +7,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .name-store {
+  .name__store {
+    margin-left: 15px;
     color: $brown;
     font-size: 2rem;
   }
@@ -57,7 +58,7 @@
 
   .search {
     height: 20px;
-    margin-right: 5px;
+    margin-right: 15px;
     font-family: Lato, sans-serif;
     font-size: 13px;
     color: $red;
@@ -68,51 +69,80 @@
     background-color: $light_beige;
   }
 }
-
 .main {
   font-size: 1.6rem;
-  display: flex;
-  .said-bar {
-    width: 30%;
-    border: 2px solid $orange;
-    &__list {
-      border: 2px solid $yellow;
-      //   background-color: $yellow;
-      padding: 10px;
-      &:hover {
-        border-color: $orange;
-        background-color: $yellow;
-        transition: 0.2s ease-in-out;
-        box-shadow: 2px -2px 25px $dark_beige;
-        cursor: pointer;
+  &-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px;
+    &__button {
+      margin: 5px;
+      &__raiting {
+        &::after {
+          content: " ⇧";
+        }
       }
+      &__price {
+        &::after {
+          content: " ⇩";
+        }
+      }
+    }
+    &__text {
+      margin: 5px;
     }
   }
 
-  .selected-products {
-    width: 70%;
-    border: 2px solid $yellow;
-    .product {
-      border: 2px solid $yellow;
-      &__wrapper {
-        margin: 10px;
-        display: flex;
-      }
-      &__img {
+  &-product-container {
+    display: flex;
+    .said-bar {
+      width: 30%;
+      border: 2px solid $orange;
+      &__list {
         border: 2px solid $yellow;
-        width: 20%;
-        margin: 10px;
+        //   background-color: $yellow;
+        padding: 10px;
+        &:hover {
+          border-color: $orange;
+          background-color: $yellow;
+          transition: 0.2s ease-in-out;
+          box-shadow: 2px -2px 25px $dark_beige;
+          cursor: pointer;
+        }
       }
-      &__text {
-        display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-      }
-      &__button {
-        max-width: 100px;
+    }
+
+    .selected-products {
+      width: 70%;
+      border: 2px solid $yellow;
+      .product {
+        border: 2px solid $yellow;
+        &__wrapper {
+          margin: 10px;
+          display: flex;
+        }
+        &__img {
+          border: 2px solid $yellow;
+          width: 20%;
+          margin: 10px;
+        }
+        &__text {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+        }
+        &__button {
+          max-width: 100px;
+        }
       }
     }
   }
+}
+
+.button__active {
+  background-color: $brown;
+  color: $light_beige;
 }
 
 .line {
@@ -120,3 +150,5 @@
   height: 2px;
   background-color: $orange;
 }
+
+// ➡

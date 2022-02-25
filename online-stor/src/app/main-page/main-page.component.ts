@@ -15,15 +15,25 @@ export class MainPageComponent implements OnInit {
   public isMouseenterProfile: boolean = false;
   public categories: Category[] = CATIGORIES;
   public products: Product[] = PRODUCTS;
-  // public selectedCategory: Category;
   public idSelectedCategory: number;
-  public isVisibleProduct: boolean = true;
+  public isSortByPrice: boolean = false;
+  public isSortByRaiting: boolean = true;
 
   constructor() {}
 
   public onSelect(category: Category): void {
-    // this.selectedCategory = category;
     this.idSelectedCategory = category.id;
+    console.log(category.id);
+  }
+
+  public sort(toggleSort: string): void {
+    if (toggleSort === 'isSortByPrice') {
+      this.isSortByPrice = true;
+      this.isSortByRaiting = false;
+    } else {
+      this.isSortByPrice = false;
+      this.isSortByRaiting = true;
+    }
   }
 
   ngOnInit(): void {}

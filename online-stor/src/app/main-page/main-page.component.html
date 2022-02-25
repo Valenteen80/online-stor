@@ -1,5 +1,5 @@
 <div class="header">
-  <h1 class="name-store">Всёго по-немножку</h1>
+  <h1 class="name__store">Рыбачим вместе</h1>
   <div class="busket-block">
     <button class="header-button">
       <div>КОРЗИНА</div>
@@ -46,32 +46,52 @@
 </div>
 <div class="line"></div>
 <div class="main">
-  <div class="said-bar">
-    <div
-      class="said-bar__list"
-      *ngFor="let category of categories"
-      (click)="onSelect(category)"
+  <div class="main-search">
+    <span class="main-search__text">Сортировка:</span>
+    <button
+      class="main-search__button header-button main-search__button__raiting"
+      (click)="sort('isSortByRaiting')"
+      [ngClass]="{ button__active: isSortByRaiting }"
     >
-      <h3>{{ category.name }}</h3>
-    </div>
+      ПО РЕЙТИНГУ</button
+    ><button
+      class="main-search__button header-button main-search__button__price"
+      (click)="sort('isSortByPrice')"
+      [ngClass]="{ button__active: isSortByPrice }"
+    >
+      ПО ЦЕНЕ
+    </button>
   </div>
-  <div class="selected-products">
-    <div
-      class="product"
-      *ngFor="let product of products | productFilter: idSelectedCategory"
-    >
-      <!-- <span>{{ product.idCategory }}</span>
-        <span>{{ idSelectedCategory }}</span> -->
-      <div class="product__wrapper">
-        <img class="product__img" [src]="product.img" alt="" />
-        <div class="product__text">
-          <h3>{{ product.name }}</h3>
-          <span
-            >Цена:
-            {{ product.price | currency: "BYN":"symbol-narrow":"1.2" }}</span
-          >
-          <span>Рейтинг: {{ product.rating }}</span>
-          <button class="product__button header-button">В КОРЗИНУ</button>
+  <div class="main-product-container">
+    <div class="said-bar">
+      <div
+        class="said-bar__list"
+        *ngFor="let category of categories; let i = index"
+        (click)="onSelect(category)"
+        [ngClass]="{ button__active: idSelectedCategory === i + 1 }"
+      >
+        <h3>{{ category.name }}</h3>
+      </div>
+    </div>
+    <div class="selected-products">
+      <div
+        class="product"
+        *ngFor="
+          let product of products | sort: idSelectedCategory:isSortByPrice
+        "
+      >
+        <div class="product__wrapper">
+          <!-- : idSelectedCategory:isSortByPrice -->
+          <img class="product__img" [src]="product.img" alt="" />
+          <div class="product__text">
+            <h3>{{ product.name }}</h3>
+            <span
+              >Цена:
+              {{ product.price | currency: "BYN":"symbol-narrow":"1.2" }}</span
+            >
+            <span>Рейтинг: {{ product.rating }}</span>
+            <button class="product__button header-button">В КОРЗИНУ</button>
+          </div>
         </div>
       </div>
     </div>
