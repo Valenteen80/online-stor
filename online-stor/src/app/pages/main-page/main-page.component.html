@@ -1,0 +1,57 @@
+<div class="main">
+  <div class="main-search">
+    <span class="main-search__text">Сортировка:</span>
+    <button
+      class="main-search__button header-button main-search__button__raiting"
+      (click)="toggleSortingByRaiting()"
+      [ngClass]="{ button__active: !isSortByPrice }"
+    >
+      ПО РЕЙТИНГУ</button
+    ><button
+      class="main-search__button header-button main-search__button__price"
+      (click)="toggleSortingByPrice()"
+      [ngClass]="{ button__active: isSortByPrice }"
+    >
+      ПО ЦЕНЕ
+    </button>
+  </div>
+  <div class="main-product-container">
+    <div class="said-bar">
+      <div
+        class="said-bar__list"
+        *ngFor="let categorie of categories; let i = index"
+        (click)="onSelectCategory(categorie)"
+        [ngClass]="{ button__active: idSelectedCategory === i + 1 }"
+      >
+        <h3>{{ categorie.name }}</h3>
+      </div>
+    </div>
+    <div class="selected-products">
+      <div class="product" *ngFor="let filterProduct of filterProducts">
+        <div class="product__wrapper">
+          <img
+            class="product__img"
+            [src]="filterProduct.img"
+            [alt]="valueAttributeProductImg"
+          />
+          <div class="product__text">
+            <h3>{{ filterProduct.name }}</h3>
+            <span
+              >Цена:
+              {{
+                filterProduct.price | currency: "BYN":"symbol-narrow":"1.2"
+              }}</span
+            >
+            <span>Рейтинг: {{ filterProduct.rating }}</span>
+            <button
+              class="product__button header-button"
+              (click)="addBasket(filterProduct)"
+            >
+              {{ filterProduct.buttonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

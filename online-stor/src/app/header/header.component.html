@@ -1,0 +1,48 @@
+<header class="header">
+  <h1 class="name__store">РЫБАЧИМ ВМЕСТЕ</h1>
+  <div class="functional__block">
+    <div>
+      <label class="search__wrapper">
+        <input
+          class="search"
+          type="text"
+          [placeholder]="placeholderValue"
+          [(ngModel)]="search"
+          name="search"
+          (input)="filterByProdukt()"
+        />
+      </label>
+    </div>
+    <button class="header-button">ВХОД</button>
+    <button class="header-button">РЕГИСТРАЦИЯ</button>
+    <div class="header-prifile">
+      <button
+        class="header-button--prifile"
+        (mouseenter)="isMouseenterProfile = true"
+      >
+        <img
+          class="header-button__img"
+          [src]="profilePicture"
+          [alt]="valueAttributeAvatar"
+        />
+      </button>
+      <div
+        class="profile-hidden-block"
+        (click)="isMouseenterProfile = false"
+        (mouseleave)="isMouseenterProfile = false"
+        *ngIf="isMouseenterProfile"
+      >
+        <button class="header-button">ПРОФИЛЬ</button>
+        <button class="header-button">ВЫЙТИ</button>
+        <button>X</button>
+      </div>
+    </div>
+    <div class="busket-block">
+      <button class="header-button">
+        <div>КОРЗИНА</div>
+      </button>
+      <span class="product__sum">0</span>
+    </div>
+  </div>
+</header>
+<div class="line"></div>
