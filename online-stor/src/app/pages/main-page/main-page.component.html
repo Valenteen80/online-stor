@@ -1,16 +1,4 @@
 <div class="main">
-  <div>
-    <label class="search__wrapper">
-      <input
-        class="search"
-        type="text"
-        [placeholder]="placeholderValue"
-        name="search"
-        [(ngModel)]="search"
-        (input)="filterByProdukt()"
-      />
-    </label>
-  </div>
   <div class="main-search">
     <span class="main-search__text">Сортировка:</span>
     <button
@@ -40,7 +28,6 @@
     </div>
     <div class="selected-products">
       <div class="product" *ngFor="let filterProduct of filterProducts">
-        <!-- | sort: isSortByPrice -->
         <div class="product__wrapper">
           <img
             class="product__img"

@@ -39,9 +39,10 @@
         [placeholder]="placeholderValue"
         [(ngModel)]="search"
         name="search"
+        (input)="filterByProdukt()"
       />
     </label>
   </div>
-  <p>{{ search }}</p>
+  <!-- <p>{{ search }}</p> -->
 </header>
 <div class="line"></div>
