@@ -5,7 +5,6 @@ export const CATIGORIES: Category[] = [
   {
     id: 1,
     name: NameCategoryEnum.summer_fishing,
-    // name: 'Товары для летней рыбалки',
   },
   {
     id: 2,

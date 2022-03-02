@@ -1,5 +1,4 @@
 import { ButtonTextEnum } from '../enums/buttonTextEnum';
-import { NameCategoryEnum } from '../enums/nameCategoryEnum';
 import { Product } from '../interfases/product';
 
 export const PRODUCTS: Product[] = [
@@ -184,4 +183,3 @@ export const PRODUCTS: Product[] = [
     buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
 ];
-// === NameCategoryEnum.all_products
