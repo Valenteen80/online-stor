@@ -1,16 +1,27 @@
-<div class="line"></div>
 <div class="main">
+  <div>
+    <label class="search__wrapper">
+      <input
+        class="search"
+        type="text"
+        [placeholder]="placeholderValue"
+        name="search"
+        [(ngModel)]="search"
+        (input)="filterByProdukt()"
+      />
+    </label>
+  </div>
   <div class="main-search">
     <span class="main-search__text">Сортировка:</span>
     <button
       class="main-search__button header-button main-search__button__raiting"
-      (click)="sort('isSortByRaiting')"
-      [ngClass]="{ button__active: isSortByRaiting }"
+      (click)="toggleSortingByRaiting()"
+      [ngClass]="{ button__active: !isSortByPrice }"
     >
       ПО РЕЙТИНГУ</button
     ><button
       class="main-search__button header-button main-search__button__price"
-      (click)="sort('isSortByPrice')"
+      (click)="toggleSortingByPrice()"
       [ngClass]="{ button__active: isSortByPrice }"
     >
       ПО ЦЕНЕ
@@ -20,31 +31,37 @@
     <div class="said-bar">
       <div
         class="said-bar__list"
-        *ngFor="let category of categories; let i = index"
-        (click)="onSelect(category)"
+        *ngFor="let categorie of categories; let i = index"
+        (click)="onSelectCategory(categorie)"
         [ngClass]="{ button__active: idSelectedCategory === i + 1 }"
       >
-        <h3>{{ category.name }}</h3>
+        <h3>{{ categorie.name }}</h3>
       </div>
     </div>
     <div class="selected-products">
-      <div
-        class="product"
-        *ngFor="
-          let product of products | sort: idSelectedCategory:isSortByPrice
-        "
-      >
+      <div class="product" *ngFor="let filterProduct of filterProducts">
+        <!-- | sort: isSortByPrice -->
         <div class="product__wrapper">
-          <!-- : idSelectedCategory:isSortByPrice -->
-          <img class="product__img" [src]="product.img" alt="" />
+          <img
+            class="product__img"
+            [src]="filterProduct.img"
+            [alt]="valueAttributeProductImg"
+          />
           <div class="product__text">
-            <h3>{{ product.name }}</h3>
+            <h3>{{ filterProduct.name }}</h3>
             <span
               >Цена:
-              {{ product.price | currency: "BYN":"symbol-narrow":"1.2" }}</span
+              {{
+                filterProduct.price | currency: "BYN":"symbol-narrow":"1.2"
+              }}</span
             >
-            <span>Рейтинг: {{ product.rating }}</span>
-            <button class="product__button header-button">В КОРЗИНУ</button>
+            <span>Рейтинг: {{ filterProduct.rating }}</span>
+            <button
+              class="product__button header-button"
+              (click)="addBasket(filterProduct)"
+            >
+              {{ filterProduct.buttonText }}
+            </button>
           </div>
         </div>
       </div>

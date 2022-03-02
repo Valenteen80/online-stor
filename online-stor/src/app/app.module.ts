@@ -13,9 +13,22 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { BasketPageComponent } from './pages/basket-page/basket-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SortByAddedToBasketPipe } from './shared/pipes/sort-by-added-to-basket/sort-by-added-to-basket.pipe';
 
 @NgModule({
-  declarations: [AppComponent, ProductFilterPipe, SortPipe, MainPageComponent, AuthPageComponent, ProductPageComponent, ProfilePageComponent, BasketPageComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    ProductFilterPipe,
+    SortPipe,
+    MainPageComponent,
+    AuthPageComponent,
+    ProductPageComponent,
+    ProfilePageComponent,
+    BasketPageComponent,
+    HeaderComponent,
+    FooterComponent,
+    SortByAddedToBasketPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

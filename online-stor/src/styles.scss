@@ -1,10 +1,7 @@
-@import "../src/assets/scss/colors"; // @import "../../assets/scss/colors";
-// @import "../../assets/scss/_mixins";
+@import "../src/assets/scss/colors";
 
 html {
   font-family: Lato, sans-serif;
   font-size: 10px;
-  // font-size: 1.2rem;
-  list-style: none;
   background-color: $light_beige;
 }

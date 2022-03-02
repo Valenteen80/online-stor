@@ -1,3 +1,5 @@
+import { ButtonTextEnum } from '../enums/buttonTextEnum';
+import { NameCategoryEnum } from '../enums/nameCategoryEnum';
 import { Product } from '../interfases/product';
 
 export const PRODUCTS: Product[] = [
@@ -10,6 +12,8 @@ export const PRODUCTS: Product[] = [
       'Удочка с кольцами Libao Wolf универсальная для всех видов поплавочной ловли. Бланк удочки обладает повышенной прочностью.',
     price: 28.34,
     rating: 1,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 2,
@@ -20,6 +24,8 @@ export const PRODUCTS: Product[] = [
       'Универсальный сверхлегкий спиннинг, изготовленный из высококачественного углеволокна. Легкий и жесткий, с быстрым строем и небольшим прогибом',
     price: 49,
     rating: 5,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 3,
@@ -30,6 +36,8 @@ export const PRODUCTS: Product[] = [
       'Небольшая мультипликаторная катушка. Корпус выполнен из ударопрочного пластика. Может быть использоваться для зимних удочек, бортовых удилищ.',
     price: 17.37,
     rating: 7,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 4,
@@ -40,6 +48,8 @@ export const PRODUCTS: Product[] = [
       'Обновленная версия широко известного Ленинградского ледобура. Ледобуры  имеют цельнотянутый шнек из 4-5 витков.',
     price: 72,
     rating: 2,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 5,
@@ -50,6 +60,8 @@ export const PRODUCTS: Product[] = [
       'Зимняя палатка «Следопыт «Куб» обеспечивает комфорт для рыбалки в зимнее время года. Благодаря системе крепления дуг, «хабы» палатки очень быстро переводятся из транспортного положения в рабочее состояние. Размеры 1.8х1.8х2.0 м.',
     price: 290,
     rating: 12,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 6,
@@ -60,6 +72,8 @@ export const PRODUCTS: Product[] = [
       'Удочки зимние ПИРС: многофункциональные, лёгкие, надёжные, удобные, "тёплые" в руке.',
     price: 4,
     rating: 10,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 7,
@@ -70,6 +84,8 @@ export const PRODUCTS: Product[] = [
       'Электромоторы работают с минимальным уровнем шума и создают идеальные условия для тролллинга.',
     price: 430,
     rating: 4,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 8,
@@ -80,6 +96,8 @@ export const PRODUCTS: Product[] = [
       'Лодочный мотор HDX T 2.6 CBMS – это мощность в 2.6 лошадиных сил в компактной оболочке двухтактного двигателя с объемом 50 куб.см.',
     price: 820,
     rating: 0,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 9,
@@ -90,6 +108,8 @@ export const PRODUCTS: Product[] = [
       'Лодочный мотор Tarpon OTH 9.9S (Sea-Pro) – лодочный двигатель с традиционной для этого класса двухтактной компоновкой. Мотор оснащен двумя цилиндрами, что позволило значительно повысить мощность по сравнению с 1-цилиндровыми предшественниками.',
     price: 2800,
     rating: 3,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 10,
@@ -100,6 +120,8 @@ export const PRODUCTS: Product[] = [
       'Классический костюм для защиты от дождя и ветра. Изготовлен из непромокаемого материала. ',
     price: 76,
     rating: 6,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 11,
@@ -110,6 +132,8 @@ export const PRODUCTS: Product[] = [
       'Сапоги забродные NordMan ПЕ-22 (ТЭП) РН для демисезонной и летней рыбалки. Базовый сапог из ЭВА с усиленной ТЭП подошвой для антипрокола и антискольжения. ',
     price: 79,
     rating: 8,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 12,
@@ -120,6 +144,8 @@ export const PRODUCTS: Product[] = [
       'Верхняя часть забродного полукомбинезона сделана из высококачественного трехслойного "дышащего" материала. Сапоги изготовлены из легкого и прочного ПВХ.',
     price: 380,
     rating: 1,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 13,
@@ -130,6 +156,8 @@ export const PRODUCTS: Product[] = [
       'Портативный эхолот Lucky FF168D - это портативный двухлучевой эхолот с проводным датчиком, который прекрасно подойдет для поиска рыбы как для любителей подледной рыбалки, так и при использовании с лодки.',
     price: 250,
     rating: 8,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 14,
@@ -140,6 +168,8 @@ export const PRODUCTS: Product[] = [
       'С эхолотом STRIKER Vivid 7sv с трансдьюсером GT52HW-TM вы сможете увидеть рыбу и ее структуру с максимальной детализацией, выбрав цвет дисплея, свое местоположение на воде и гидролокатор для дня.',
     price: 1734,
     rating: 6,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
   {
     id: 15,
@@ -150,5 +180,8 @@ export const PRODUCTS: Product[] = [
       'Зарядное устройство предназначено для заряда 12В автомобильных аккумуляторных батарей любой емкости в автоматическом режиме (автоматическое уменьшение тока в конце заряда).',
     price: 89,
     rating: 17,
+    isBasket: false,
+    buttonText: ButtonTextEnum.BUTTON_ADD_TO_BASKET,
   },
 ];
+// === NameCategoryEnum.all_products

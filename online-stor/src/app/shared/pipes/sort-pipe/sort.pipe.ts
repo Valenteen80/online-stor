@@ -5,18 +5,23 @@ import { Product } from 'src/app/interfases/product';
   name: 'sort',
 })
 export class SortPipe implements PipeTransform {
-  transform(
-    products: Product[],
-    idCategory: number = 1,
-    isSortByPrice: boolean
-  ): Product[] {
-    let filteredByCategory: Product[] = products.filter((product) => {
-      return product.idCategory === idCategory;
-    });
+  transform(products: Product[], isSortByPrice: boolean): Product[] {
+    // let filteredByCategory: Product[] = products.filter((product) => {
+    //   return product.idCategory === idCategory;
+    // });
 
     if (isSortByPrice) {
-      return filteredByCategory.sort((a, b) => a.price - b.price);
+      return products.sort((a, b) => a.price - b.price);
     }
-    return filteredByCategory.sort((a, b) => b.rating - a.rating);
+
+    return products.sort((a, b) => b.rating - a.rating);
   }
 }
+
+// mapped.sort(function(a, b) {
+//   if (a.value > b.value) {
+//     return 1; }
+//   if (a.value < b.value) {
+//     return -1; }
+//   return 0;
+// });

@@ -1,24 +1,30 @@
 import { Category } from '../interfases/category';
+import { NameCategoryEnum } from 'src/app/enums/nameCategoryEnum';
 
 export const CATIGORIES: Category[] = [
   {
     id: 1,
-    name: 'Товары для летней рыбалки',
+    name: NameCategoryEnum.summer_fishing,
+    // name: 'Товары для летней рыбалки',
   },
   {
     id: 2,
-    name: 'Товары для зимней рыбалки',
+    name: NameCategoryEnum.winter_fishing,
   },
   {
     id: 3,
-    name: 'Лодочные моторы',
+    name: NameCategoryEnum.boat_motors,
   },
   {
     id: 4,
-    name: 'Одежда и обувь',
+    name: NameCategoryEnum.clothes_and_shoes,
   },
   {
     id: 5,
-    name: 'Электороника',
+    name: NameCategoryEnum.electronics,
+  },
+  {
+    id: 6,
+    name: NameCategoryEnum.all_products,
   },
 ];
